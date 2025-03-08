@@ -1,0 +1,21 @@
+.container {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.player1 {
+  color: #592fc5;
+  padding: 10px;
+  margin: 10px;
+}
+
+.player2 {
+  color: #8f2828;
+  padding: 10px;
+  margin: 10px;
+}
+
+li {
+  list-style-type: none;
+}
