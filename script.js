@@ -7,46 +7,62 @@ const playerTwoScore = document.getElementById('life2');
 const resetButton = document.getElementById('reset');
 const playerOneList = document.querySelector('.player1List');
 const playerTwoList = document.querySelector('.player2List');
+const playerOneHistory = document.getElementById('historyOne');
+const playerTwoHistory = document.getElementById('historyTwo');
 
 playerOneAddLife.addEventListener('click', function() {
-  let history = [];
+  const history = [];
   playerOneScore.innerText = parseInt(playerOneScore.innerText) + 1;
   history.push(playerOneScore.innerText);
+  playerOneList.innerHTML += `<li>${history}</li>`;
   setTimeout(() => {
-    playerOneList.innerHTML += `<li>${history}</li>`;
+    console.log(history);
+  }
+  , 2000);
+})
+playerOneRemoveLife.addEventListener('click', function() {
+  const history = [];
+  playerOneScore.innerText = parseInt(playerOneScore.innerText) - 1;
+  history.push(playerOneScore.innerText);
+  playerOneList.innerHTML += `<li>${history}</li>`;
+  setTimeout(() => {
+    console.log(history);
   }
   , 2000);
 })
 
-playerOneRemoveLife.addEventListener('click', function() {
-  let history = [];
-  playerOneScore.innerText = parseInt(playerOneScore.innerText) - 1;
-  history.push(playerOneScore.innerText);
-  setTimeout(() => {
-    playerOneList.innerHTML += `<li>${history}</li>`;
-  }
-  , 2000);
+playerOneHistory.addEventListener('click', function(e) {
+  e.preventDefault();
+  playerOneList.classList.toggle('visible')
 })
 
 playerTwoAddLife.addEventListener('click', function() {
-  let history = [];
+  const history = [];
   playerTwoScore.innerText = parseInt(playerTwoScore.innerText) + 1;
   history.push(playerTwoScore.innerText);
+  playerTwoList.innerHTML += `<li>${history}</li>`;
   setTimeout(() => {
-    playerTwoList.innerHTML += `<li>${history}</li>`;
+    console.log(history);
+  }
+  , 2000);
+})
+playerTwoRemoveLife.addEventListener('click', function() {
+  const history = [];
+  playerTwoScore.innerText = parseInt(playerTwoScore.innerText) - 1;
+  history.push(playerTwoScore.innerText);
+  playerTwoList.innerHTML += `<li>${history}</li>`;
+  setTimeout(() => {
+    console.log(history);
   }
   , 2000);
 })
 
-playerTwoRemoveLife.addEventListener('click', function() {
-  let history = [];
-  playerTwoScore.innerText = parseInt(playerTwoScore.innerText) - 1;
-  history.push(playerTwoScore.innerText);
-  setTimeout(() => {
-    playerTwoList.innerHTML += `<li>${history}</li>`;
-  }
-  , 2000);
+playerTwoHistory.addEventListener('click', function(e) {
+  e.preventDefault();
+  playerTwoList.classList.toggle('visible')
 })
+
+
 
 resetButton.addEventListener('click', function() {
 // delete the list of the historic of the scores and reset the page

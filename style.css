@@ -19,3 +19,19 @@
 li {
   list-style-type: none;
 }
+
+/* #history {
+  display: block;
+} */
+
+.player1List {
+  display: none;
+}
+
+.player2List {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
