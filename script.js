@@ -7,35 +7,45 @@ const playerTwoScore = document.getElementById('life2');
 const resetButton = document.getElementById('reset');
 const playerOneList = document.querySelector('.player1List');
 const playerTwoList = document.querySelector('.player2List');
-// create a list with the historic of the scores
 
 playerOneAddLife.addEventListener('click', function() {
   let history = [];
   playerOneScore.innerText = parseInt(playerOneScore.innerText) + 1;
   history.push(playerOneScore.innerText);
-  playerOneList.innerHTML += `<li>${history}</li>`;
+  setTimeout(() => {
+    playerOneList.innerHTML += `<li>${history}</li>`;
+  }
+  , 2000);
 })
 
 playerOneRemoveLife.addEventListener('click', function() {
   let history = [];
   playerOneScore.innerText = parseInt(playerOneScore.innerText) - 1;
   history.push(playerOneScore.innerText);
-  playerOneList.innerHTML += `<li>${history}</li>`;
+  setTimeout(() => {
+    playerOneList.innerHTML += `<li>${history}</li>`;
+  }
+  , 2000);
 })
 
 playerTwoAddLife.addEventListener('click', function() {
   let history = [];
-  history.push(playerTwoScore.innerText);
-  // create li with the current score and append it to the ul
-  playerTwoList.innerHTML += `<li>${history}</li>`;
   playerTwoScore.innerText = parseInt(playerTwoScore.innerText) + 1;
+  history.push(playerTwoScore.innerText);
+  setTimeout(() => {
+    playerTwoList.innerHTML += `<li>${history}</li>`;
+  }
+  , 2000);
 })
 
 playerTwoRemoveLife.addEventListener('click', function() {
   let history = [];
   playerTwoScore.innerText = parseInt(playerTwoScore.innerText) - 1;
   history.push(playerTwoScore.innerText);
-  playerTwoList.innerHTML += `<li>${history}</li>`;
+  setTimeout(() => {
+    playerTwoList.innerHTML += `<li>${history}</li>`;
+  }
+  , 2000);
 })
 
 resetButton.addEventListener('click', function() {
