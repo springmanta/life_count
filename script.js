@@ -11,58 +11,30 @@ const playerOneHistory = document.getElementById('historyOne');
 const playerTwoHistory = document.getElementById('historyTwo');
 
 playerOneAddLife.addEventListener('click', function() {
-  const history = [];
   playerOneScore.innerText = parseInt(playerOneScore.innerText) + 1;
-  history.push(playerOneScore.innerText);
-  playerOneList.innerHTML += `<li>${history}</li>`;
   setTimeout(() => {
-    console.log(history);
   }
   , 2000);
 })
+
+const history = [];
+history.push(playerOneScore.innerText);
+playerOneList.innerHTML = `<li>${history}</li>`;
+playerOneHistory.addEventListener('click', function(e) {
+  playerOneList.classList.toggle('visible')
+})
+
+
 playerOneRemoveLife.addEventListener('click', function() {
   const history = [];
   playerOneScore.innerText = parseInt(playerOneScore.innerText) - 1;
   history.push(playerOneScore.innerText);
-  playerOneList.innerHTML += `<li>${history}</li>`;
-  setTimeout(() => {
-    console.log(history);
-  }
-  , 2000);
+  playerOneList.innerHTML = `<li>${history}</li>`;
+  // setTimeout(() => {
+  //   history;
+  // }
+  // , 2000);
 })
-
-playerOneHistory.addEventListener('click', function(e) {
-  e.preventDefault();
-  playerOneList.classList.toggle('visible')
-})
-
-playerTwoAddLife.addEventListener('click', function() {
-  const history = [];
-  playerTwoScore.innerText = parseInt(playerTwoScore.innerText) + 1;
-  history.push(playerTwoScore.innerText);
-  playerTwoList.innerHTML += `<li>${history}</li>`;
-  setTimeout(() => {
-    console.log(history);
-  }
-  , 2000);
-})
-playerTwoRemoveLife.addEventListener('click', function() {
-  const history = [];
-  playerTwoScore.innerText = parseInt(playerTwoScore.innerText) - 1;
-  history.push(playerTwoScore.innerText);
-  playerTwoList.innerHTML += `<li>${history}</li>`;
-  setTimeout(() => {
-    console.log(history);
-  }
-  , 2000);
-})
-
-playerTwoHistory.addEventListener('click', function(e) {
-  e.preventDefault();
-  playerTwoList.classList.toggle('visible')
-})
-
-
 
 resetButton.addEventListener('click', function() {
 // delete the list of the historic of the scores and reset the page
